@@ -4,20 +4,16 @@ package main
 import "fmt"
 
 func main() {
-	// 3️⃣ SWITCH — Lebih sederhana dari if bertingkat
-	// Go punya switch yang bersih dan sederhana:
+	// 4️⃣ range — Loop untuk slice, array, map, string
 
-	hari := "mon"
+	// range sering digunakan untuk mengulang isi struktur data.
 
-	switch hari {
-	case "mon":
-		fmt.Println("senin")
-	case "tue":
-		fmt.Println("selasa")
-	default:
-		fmt.Println("hari lain")
+	// Untuk slice:
+	angka := []int{10, 20, 30}
+
+	for i, v := range angka {
+		fmt.Println("index:", i, "nilai:", v)
 	}
 
-	// Di Go, switch otomatis break — tidak perlu break.
-
+	// kalau hanya butuh nilai for _, v := range angka {
 }
