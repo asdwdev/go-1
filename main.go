@@ -1,15 +1,23 @@
-// 1️⃣ ARRAY (fixed size)
+// 2️⃣ SLICE (dynamic array) — INI YANG PALING PENTING
 
-// Array punya ukuran tetap. Jarang digunakan secara langsung.
+// Slice = struktur data yang fleksibel dan paling sering digunakan.
 package main
 
+import "fmt"
+
 func main() {
-	var a [3]int = [3]int{1, 2, 3}
-	// atau
-	// b := [5]string{"a", "b", "c", "d", "e"}
+	nums := []int{10, 20, 30}
+	fmt.Println(nums)
 
-	println(a[0])
+	// Slice bisa bertambah panjang:
+	nums = append(nums, 40)
+	fmt.Println(nums)
 
-	// 	Ukuran array bagian dari tipenya:
-	// [3]int ≠ [4]int
+	// akses elemen
+	fmt.Println(nums[0])
+
+	// looping slice
+	for i, v := range nums {
+		fmt.Println(i, v)
+	}
 }
