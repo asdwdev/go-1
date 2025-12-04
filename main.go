@@ -8,24 +8,14 @@ package main
 import "fmt"
 
 func main() {
-	// multiple variabel declaration
+	// print variabel
+	// pakai fmt.Println():
+	name := "budi"
+	age := 30
 
-	// contoh:
-	var a, b, c int = 1, 2, 3
-	fmt.Println(a)
-	fmt.Println(b)
-	fmt.Println(c)
+	fmt.Println(name)
+	fmt.Println(age)
 
-	// atau short:
-	x, y := 10, 20
-	fmt.Println(x)
-	fmt.Println(y)
-
-	// bisa beda tipe mamakai grup
-	var (
-		name string = "andi"
-		age  int    = 25
-		vip  bool   = true
-	)
-	fmt.Println(name, age, vip)
+	// atau dalam satu baris:
+	fmt.Println("nama:", name, "umur:", age)
 }
