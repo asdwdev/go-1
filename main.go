@@ -1,10 +1,32 @@
-// 3️⃣ Membuat slice dari array (opsional)
+// 4️⃣ MAP (key-value)
+
 package main
 
 import "fmt"
 
 func main() {
-	arr := [5]int{1, 2, 3, 4, 5}
-	s := arr[1:4] // index 1 sampai 3
-	fmt.Println(s)
+	// Contoh map string → int:
+	m := map[string]int{
+		"apel":   3,
+		"pisang": 5,
+	}
+	fmt.Println(m)
+
+	// menambahkan key
+	m["jeruk"] = 7
+	fmt.Println(m)
+
+	// looping map
+	for k, v := range m {
+		fmt.Println(k, v)
+	}
+
+	// Cek apakah key ada:
+	v, ok := m["apels"]
+	if ok {
+		fmt.Println("ada:", v)
+	} else {
+		fmt.Println("key tidak ditemukan")
+	}
+
 }
