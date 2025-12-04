@@ -1,19 +1,27 @@
-// If, For, Switch (Kontrol Alur)
+// latihan bagian 4
 package main
 
 import "fmt"
 
 func main() {
-	// 4️⃣ range — Loop untuk slice, array, map, string
+	var x int
+	fmt.Print("masukkan angka: ")
+	fmt.Scanln(&x)
 
-	// range sering digunakan untuk mengulang isi struktur data.
-
-	// Untuk slice:
-	angka := []int{10, 20, 30}
-
-	for i, v := range angka {
-		fmt.Println("index:", i, "nilai:", v)
+	if x%2 == 0 {
+		fmt.Println("angka genap")
+	} else {
+		fmt.Println("angka ganjil")
 	}
 
-	// kalau hanya butuh nilai for _, v := range angka {
+	i := 1
+	for i <= x {
+		fmt.Println(i)
+		i++
+	}
+
+	switch {
+	case x > 10:
+		fmt.Println("angka besar")
+	}
 }
