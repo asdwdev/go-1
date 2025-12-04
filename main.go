@@ -1,24 +1,13 @@
-// fugnsi dengan parameter
+// fungsi dengan return value (mengembalikan nilai)
 package main
 
 import "fmt"
 
-func sapa(nama string) {
-	fmt.Println("halo,", nama)
-}
-
-// parameter bisa lebih dari satu
-func tambah(a int, b int) {
-	fmt.Println(a + b)
-}
-
-// atau lebih ringkas:
-func kurang(a, b int) {
-	fmt.Println(a - b)
+func add(a, b int) int {
+	return a + b
 }
 
 func main() {
-	sapa("nnl")
-	tambah(2, 3)
-	kurang(3, 2)
+	hasil := add(2, 3)
+	fmt.Println(hasil)
 }
