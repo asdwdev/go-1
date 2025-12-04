@@ -1,16 +1,16 @@
-// latihan bagian 3
+// If, For, Switch (Kontrol Alur)
 package main
 
 import "fmt"
 
 func main() {
-	var nama string = "nnl"
-	umur := 21
-	var tinggi float64 = 173
-	pelajar := true
+	// 1️⃣ IF — Percabangan Dasar
 
-	fmt.Println("nama saya", nama)
-	fmt.Println("umur saya", umur)
-	fmt.Println("tinggi saya", tinggi)
-	fmt.Println("apakah saya pelajar", pelajar)
+	umur := 20
+
+	if umur >= 18 {
+		fmt.Println("dewasa")
+	} else {
+		fmt.Println("belum dewasa")
+	}
 }
