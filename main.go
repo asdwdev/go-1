@@ -1,12 +1,19 @@
+// Go punya dua cara utama membuat variabel:
+
+// Menggunakan var
+
+// Menggunakan short declaration :=
 package main
 
-import "fmt"
-
 func main() {
-	fmt.Println("nama saya arya")
-	fmt.Println("ini adalah baris kedua")
+	// a. menggunakan var
+	var x int = 10
+	var y string = "halo"
+	var z bool = true
 
-	// output tanpa newline
-	fmt.Print("hello")
-	fmt.Print("go")
+	// bisa juga tanpa tipe
+	var xy = 20 // otomatis menebak tipenya (int)
+
+	// kalau tanpa nilai sama sekali
+	var b int // maka nilainya otomatis jadi zero value
 }
