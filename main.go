@@ -1,26 +1,15 @@
-// latihan bagian 5
+// 1️⃣ ARRAY (fixed size)
+
+// Array punya ukuran tetap. Jarang digunakan secara langsung.
 package main
 
-import "fmt"
-
-func kelilingPersegi(sisi int) int {
-	return 4 * sisi
-}
-
-func luasPersegi(sisi int) int {
-	return sisi * sisi
-}
-
-func hitung(sisi int) (int, int) {
-	return kelilingPersegi(sisi), luasPersegi(sisi)
-}
-
 func main() {
-	var sisi int
-	fmt.Print("masukkan sisi: ")
-	fmt.Scanln(&sisi)
+	var a [3]int = [3]int{1, 2, 3}
+	// atau
+	// b := [5]string{"a", "b", "c", "d", "e"}
 
-	keliling, luas := hitung(sisi)
-	fmt.Println("keliling:", keliling)
-	fmt.Println("luas:", luas)
+	println(a[0])
+
+	// 	Ukuran array bagian dari tipenya:
+	// [3]int ≠ [4]int
 }
