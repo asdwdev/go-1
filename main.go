@@ -1,17 +1,10 @@
-// named return values
-// Go bisa memberi nama pada return value:
+// 6️⃣ Fungsi tidak boleh dideklarasi di dalam fungsi lain
 package main
 
-import "fmt"
+// harus di luar fungsi
 
-func persegi(s int) (luas int, keliling int) {
-	luas = s * s
-	keliling = 4 * s
-	return // return tanpa nilai -> pakai nilai bernama
-}
+func test()
 
 func main() {
-	luas, keliling := persegi(5)
-	fmt.Println("luas persegi:", luas)
-	fmt.Println("keliling persegi:", keliling)
+	// func test() //error
 }
