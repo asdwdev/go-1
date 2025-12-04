@@ -1,12 +1,24 @@
-// Fungsi = blok kode yang bisa dipanggil berulang-ulang.
+// fugnsi dengan parameter
 package main
 
 import "fmt"
 
-func hello() {
-	fmt.Println("halo dari fungsi!")
+func sapa(nama string) {
+	fmt.Println("halo,", nama)
+}
+
+// parameter bisa lebih dari satu
+func tambah(a int, b int) {
+	fmt.Println(a + b)
+}
+
+// atau lebih ringkas:
+func kurang(a, b int) {
+	fmt.Println(a - b)
 }
 
 func main() {
-	hello()
+	sapa("nnl")
+	tambah(2, 3)
+	kurang(3, 2)
 }
