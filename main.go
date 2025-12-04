@@ -5,12 +5,27 @@
 // Menggunakan short declaration :=
 package main
 
-func main() {
-	// deklarasi variabel tanpa nilai
+import "fmt"
 
-	// nilai awalnya otomatis
-	var x int     // 0
-	var y float64 // 0
-	var s string  // "" (kosong)
-	var b bool    // false
+func main() {
+	// multiple variabel declaration
+
+	// contoh:
+	var a, b, c int = 1, 2, 3
+	fmt.Println(a)
+	fmt.Println(b)
+	fmt.Println(c)
+
+	// atau short:
+	x, y := 10, 20
+	fmt.Println(x)
+	fmt.Println(y)
+
+	// bisa beda tipe mamakai grup
+	var (
+		name string = "andi"
+		age  int    = 25
+		vip  bool   = true
+	)
+	fmt.Println(name, age, vip)
 }
