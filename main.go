@@ -1,21 +1,16 @@
-// Go punya dua cara utama membuat variabel:
-
-// Menggunakan var
-
-// Menggunakan short declaration :=
+// latihan bagian 3
 package main
 
 import "fmt"
 
 func main() {
-	// print variabel
-	// pakai fmt.Println():
-	name := "budi"
-	age := 30
+	var nama string = "nnl"
+	umur := 21
+	var tinggi float64 = 173
+	pelajar := true
 
-	fmt.Println(name)
-	fmt.Println(age)
-
-	// atau dalam satu baris:
-	fmt.Println("nama:", name, "umur:", age)
+	fmt.Println("nama saya", nama)
+	fmt.Println("umur saya", umur)
+	fmt.Println("tinggi saya", tinggi)
+	fmt.Println("apakah saya pelajar", pelajar)
 }
