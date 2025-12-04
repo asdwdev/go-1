@@ -8,8 +8,11 @@ func main() {
 
 	// Go cuma punya 1 jenis loop yaitu for.
 	// Tapi bisa dipakai dalam banyak gaya.
-	// 2.1 For gaya klasik (seperti C)
-	for i := 0; i < 5; i++ {
+
+	// 2.2 For sebagai while loop
+	i := 0
+	for i < 5 {
 		fmt.Println(i)
+		i++
 	}
 }
