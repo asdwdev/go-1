@@ -1,13 +1,21 @@
-// fungsi dengan return value (mengembalikan nilai)
+// 4️⃣ Multiple Return Values (fitur khas Go)
+// sangat sering dipakai.
 package main
 
 import "fmt"
 
-func add(a, b int) int {
-	return a + b
+func bagi(a, b float64) (float64, error) {
+	if b == 0 {
+		return 0, fmt.Errorf("tidak bisa bagi 0")
+	}
+	return a / b, nil
 }
 
 func main() {
-	hasil := add(2, 3)
-	fmt.Println(hasil)
+	hasil, err := bagi(10, 0)
+	if err != nil {
+		fmt.Println("error:", err)
+		return
+	}
+	fmt.Println("hasil:", hasil)
 }
