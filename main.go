@@ -6,13 +6,11 @@
 package main
 
 func main() {
-	// b. menggunakan := (short declaration)
-	// hanya boleh di dalam fungsi
+	// deklarasi variabel tanpa nilai
 
-	name := "budi"
-	age := 20
-	isActive := true
-
-	// short declaration = otomatis menetukan tipe berdasarkan nilai
-	// sering dipake di go
+	// nilai awalnya otomatis
+	var x int     // 0
+	var y float64 // 0
+	var s string  // "" (kosong)
+	var b bool    // false
 }
