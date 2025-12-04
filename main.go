@@ -12,21 +12,8 @@ func main() {
 	}
 	fmt.Println(m)
 
-	// menambahkan key
-	m["jeruk"] = 7
+	// delete element map
+	delete(m, "apel")
 	fmt.Println(m)
-
-	// looping map
-	for k, v := range m {
-		fmt.Println(k, v)
-	}
-
-	// Cek apakah key ada:
-	v, ok := m["apels"]
-	if ok {
-		fmt.Println("ada:", v)
-	} else {
-		fmt.Println("key tidak ditemukan")
-	}
 
 }
