@@ -1,23 +1,10 @@
-// 2️⃣ SLICE (dynamic array) — INI YANG PALING PENTING
-
-// Slice = struktur data yang fleksibel dan paling sering digunakan.
+// 3️⃣ Membuat slice dari array (opsional)
 package main
 
 import "fmt"
 
 func main() {
-	nums := []int{10, 20, 30}
-	fmt.Println(nums)
-
-	// Slice bisa bertambah panjang:
-	nums = append(nums, 40)
-	fmt.Println(nums)
-
-	// akses elemen
-	fmt.Println(nums[0])
-
-	// looping slice
-	for i, v := range nums {
-		fmt.Println(i, v)
-	}
+	arr := [5]int{1, 2, 3, 4, 5}
+	s := arr[1:4] // index 1 sampai 3
+	fmt.Println(s)
 }
