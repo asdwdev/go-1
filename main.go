@@ -6,14 +6,13 @@
 package main
 
 func main() {
-	// a. menggunakan var
-	var x int = 10
-	var y string = "halo"
-	var z bool = true
+	// b. menggunakan := (short declaration)
+	// hanya boleh di dalam fungsi
 
-	// bisa juga tanpa tipe
-	var xy = 20 // otomatis menebak tipenya (int)
+	name := "budi"
+	age := 20
+	isActive := true
 
-	// kalau tanpa nilai sama sekali
-	var b int // maka nilainya otomatis jadi zero value
+	// short declaration = otomatis menetukan tipe berdasarkan nilai
+	// sering dipake di go
 }
