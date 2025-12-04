@@ -4,14 +4,20 @@ package main
 import "fmt"
 
 func main() {
-	// 	2️⃣ FOR — Satu-satunya loop di Go
+	// 3️⃣ SWITCH — Lebih sederhana dari if bertingkat
+	// Go punya switch yang bersih dan sederhana:
 
-	// Go cuma punya 1 jenis loop yaitu for.
-	// Tapi bisa dipakai dalam banyak gaya.
+	hari := "mon"
 
-	// 2.3 For tanpa kondisi (infinite loop)
-	for {
-		fmt.Println("loop terus")
+	switch hari {
+	case "mon":
+		fmt.Println("senin")
+	case "tue":
+		fmt.Println("selasa")
+	default:
+		fmt.Println("hari lain")
 	}
-	// Biasanya dipakai untuk server atau event loop.
+
+	// Di Go, switch otomatis break — tidak perlu break.
+
 }
