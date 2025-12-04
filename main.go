@@ -4,10 +4,12 @@ package main
 import "fmt"
 
 func main() {
-	// 	1.1 IF dengan kondisi di dalamnya (idiom Go)
+	// 	2️⃣ FOR — Satu-satunya loop di Go
 
-	// Go memperbolehkan membuat variabel langsung di dalam if.
-	if x := 10; x > 5 {
-		fmt.Println("lebih besar")
+	// Go cuma punya 1 jenis loop yaitu for.
+	// Tapi bisa dipakai dalam banyak gaya.
+	// 2.1 For gaya klasik (seperti C)
+	for i := 0; i < 5; i++ {
+		fmt.Println(i)
 	}
 }
