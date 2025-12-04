@@ -4,13 +4,10 @@ package main
 import "fmt"
 
 func main() {
-	// 1️⃣ IF — Percabangan Dasar
+	// 	1.1 IF dengan kondisi di dalamnya (idiom Go)
 
-	umur := 20
-
-	if umur >= 18 {
-		fmt.Println("dewasa")
-	} else {
-		fmt.Println("belum dewasa")
+	// Go memperbolehkan membuat variabel langsung di dalam if.
+	if x := 10; x > 5 {
+		fmt.Println("lebih besar")
 	}
 }
