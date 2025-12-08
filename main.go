@@ -1,34 +1,31 @@
+// 1️⃣ Apa itu Goroutine?
+
+// Goroutine adalah cara Go menjalankan fungsi secara concurrent (bersamaan), tapi lebih ringan dari thread.
+
 package main
 
-import "fmt"
-
-// definisi struct
-type Mahasiswa struct {
-	Nama string
-	Umur int
-}
-
-// fungsi yang mengisi data mahasiswa
-func isiMahasiswa(m *Mahasiswa) {
-	fmt.Println("masukkan data mahasiswa")
-
-	fmt.Print("nama: ")
-	fmt.Scan(&m.Nama)
-
-	fmt.Print("umur: ")
-	fmt.Scan(&m.Umur)
-}
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
-	// bikin struct kosong
-	var m Mahasiswa
+	// go func() {
+	// 	fmt.Println("halo dari goroutine")
+	// }()
 
-	// oper pointer ke fungsi supaya struct bisa diisi
-	isiMahasiswa(&m)
+	go fmt.Println("halo")
 
-	// tampilkan hasilnya
-	fmt.Println("hasil:")
-	fmt.Println("nama:", m.Nama)
-	fmt.Println("umur:", m.Umur)
+	// 	Sering tidak muncul apa-apa.
 
+	// Kenapa?
+	// Karena main selesai duluan, goroutine belum sempat jalan.
+
+	// Makanya kita butuh synchronization.
+
+	// 3️⃣ Cara sinkronisasi: time.Sleep (cara paling basic)
+	time.Sleep(1 * time.Second)
+
+	// 	Ini hanya untuk belajar dasar.
+	// Nanti kita pakai WaitGroup yang benar.
 }
