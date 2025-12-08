@@ -2,19 +2,33 @@ package main
 
 import "fmt"
 
+// definisi struct
 type Mahasiswa struct {
 	Nama string
 	Umur int
 }
 
+// fungsi yang mengisi data mahasiswa
+func isiMahasiswa(m *Mahasiswa) {
+	fmt.Println("masukkan data mahasiswa")
+
+	fmt.Print("nama: ")
+	fmt.Scan(&m.Nama)
+
+	fmt.Print("umur: ")
+	fmt.Scan(&m.Umur)
+}
+
 func main() {
+	// bikin struct kosong
 	var m Mahasiswa
 
-	if nama := "ajit"; nama == "ijat" {
-		m.Nama = "ijat"
-	} else {
-		m.Nama = "warko"
-	}
+	// oper pointer ke fungsi supaya struct bisa diisi
+	isiMahasiswa(&m)
 
-	fmt.Println(m.Nama)
+	// tampilkan hasilnya
+	fmt.Println("hasil:")
+	fmt.Println("nama:", m.Nama)
+	fmt.Println("umur:", m.Umur)
+
 }
