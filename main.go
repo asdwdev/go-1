@@ -1,34 +1,31 @@
-// latihan
+// Channel (Komunikasi Antar Goroutine)
+// Channel adalah cara goroutine saling mengirim data.
+// Ini yang membuat concurrency di Go beda dari bahasa lain.
+
+// Channel = “pipa” tempat goroutine bisa saling mengirim nilai.
 package main
 
-import (
-	"fmt"
-	"sync"
-)
-
-func cetak(n string) {
-	fmt.Println("halo dari", n)
-}
+import "fmt"
 
 func main() {
-	var wg sync.WaitGroup
+	// 1️⃣ Membuat channel
+	ch := make(chan int)
 
-	wg.Add(3)
+	// 2️⃣ Mengirim data ke channel
+	ch <- 10
 
-	go func() {
-		cetak("a")
-		wg.Done()
-	}()
+	// 3️⃣ Menerima data dari channel
+	v := <-ch
 
-	go func() {
-		cetak("b")
-		wg.Done()
-	}()
+	fmt.Println(v)
 
-	go func() {
-		cetak("c")
-		wg.Done()
-	}()
+	// 	4️⃣ Sifat channel: blocking
 
-	wg.Wait()
+	// Ini penting:
+
+	// Jika goroutine mengirim, dia berhenti sampai ada yang menerima.
+
+	// Jika goroutine menerima, dia berhenti sampai ada yang mengirim.
+
+	// Karena itu, channel otomatis menyinkronkan goroutine.
 }
