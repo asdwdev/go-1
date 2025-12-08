@@ -8,11 +8,13 @@ type Person struct {
 	Age  int
 }
 
-func main() {
-	// 2️⃣ Struct literal (cara cepat membuat struct)
-	p := Person{"andi", 20}
-	fmt.Println(p)
+// 4️⃣ Methods (fungsi yang nempel pada struct)
+// Seperti fungsi, tapi khusus untuk tipe tertentu.
+func (p Person) Greet() {
+	fmt.Println("halo, saya", p.Name)
+}
 
-	p.Age = 25
-	fmt.Println(p)
+func main() {
+	p := Person{"andi", 21}
+	p.Greet()
 }
