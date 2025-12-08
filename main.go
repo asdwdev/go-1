@@ -45,16 +45,16 @@ package main
 import "fmt"
 
 func main() {
-	ch := make(chan int, 3)
+	ch := make(chan string, 3)
 
 	go func() {
-		ch <- 1
-		ch <- 2
-		ch <- 3
+		ch <- "pesan 1"
+		ch <- "pesan 2"
+		ch <- "pesan 3"
 		close(ch)
 	}()
 
-	for v := range ch {
-		fmt.Println(v)
+	for msg := range ch {
+		fmt.Println(msg)
 	}
 }
