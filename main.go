@@ -1,14 +1,19 @@
+// latihan
 package main
 
 import "fmt"
 
 func main() {
-	ch := make(chan string)
+	ch := make(chan int)
 
 	go func() {
-		ch <- "halo dari goroutine"
+		for i := 1; i <= 5; i++ {
+			ch <- i // kirim angka ke channel
+		}
 	}()
 
-	pesan := <-ch
-	fmt.Println(pesan)
+	for i := 0; i < 5; i++ {
+		angka := <-ch // terima dari channel
+		fmt.Println(angka)
+	}
 }
