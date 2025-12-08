@@ -2,23 +2,28 @@ package main
 
 import "fmt"
 
-type Mahasiswa struct {
-	Nama    string
-	Umur    int
-	Jurusan string
+// 1️⃣ Apa itu interface di Go?
+
+// Interface = kumpulan method yang mendefinisikan perilaku.
+type Speaker interface {
+	Speak() string
 }
 
-func (m Mahasiswa) Perkenalan() {
-	fmt.Println("halo, nama saya", m.Nama, "umur", m.Umur, "jurusan", m.Jurusan)
+// 🎯 “Tipe apa pun yang punya method Speak() string otomatis dianggap sebagai Speaker.”
+// implementasi interface (otomatis!)
+
+type Dog struct{}
+
+func (d Dog) Speak() string {
+	return "guk!"
 }
 
-func (m *Mahasiswa) UlangTahun() {
-	m.Umur++
+// pemakaian interface
+func SaySomething(s Speaker) {
+	fmt.Println(s.Speak())
 }
 
 func main() {
-	m := Mahasiswa{"nil", 21, "informatika"}
-	m.Perkenalan()
-	m.UlangTahun()
-	m.Perkenalan()
+	d := Dog{}
+	SaySomething(d)
 }
