@@ -12,4 +12,7 @@ func main() {
 	// 2️⃣ Struct literal (cara cepat membuat struct)
 	p := Person{"andi", 20}
 	fmt.Println(p)
+
+	p.Age = 25
+	fmt.Println(p)
 }
