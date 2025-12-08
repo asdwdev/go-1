@@ -1,36 +1,30 @@
+// 1️⃣ Error basic: return error
+
+// Go punya tipe built-in error.
 package main
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
-type Kendaraan interface {
-	Info() string
-}
-
-type Mobil struct {
-	Merk  string
-	Tahun int
-}
-
-type Motor struct {
-	Merk  string
-	Tahun int
-}
-
-func (mobil Mobil) Info() string {
-	return fmt.Sprintf("mobil %s (%d)", mobil.Merk, mobil.Tahun)
-}
-
-func (motor Motor) Info() string {
-	return fmt.Sprintf("motor %s (%d)", motor.Merk, motor.Tahun)
-}
-
-func CetakInfo(k Kendaraan) {
-	fmt.Println(k.Info())
+func bagi(a, b float64) (float64, error) {
+	if b == 0 {
+		return 0, errors.New("tidak bisa bagi dengan nol")
+	}
+	return a / b, nil
 }
 
 func main() {
-	mobil := Mobil{"honda", 2010}
-	motor := Motor{"yamaha", 2015}
-	CetakInfo(mobil)
-	CetakInfo(motor)
+	hasil, err := bagi(10, 0)
+	if err != nil {
+		fmt.Println("terjadi error:", err)
+		return
+	}
+	fmt.Println("hasil:", hasil)
 }
+
+// result, err := something()
+// if err != nil {
+//     // tangani error
+// }
