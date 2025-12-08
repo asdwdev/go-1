@@ -1,25 +1,24 @@
-// Struct adalah kumpulan beberapa field (variabel) dalam satu tipe.
 package main
 
 import "fmt"
 
-type Person struct {
-	Name string
-	Age  int
+type Mahasiswa struct {
+	Nama    string
+	Umur    int
+	Jurusan string
 }
 
-func (p Person) Greet() {
-	fmt.Println("halo, saya", p.Name)
+func (m Mahasiswa) Perkenalan() {
+	fmt.Println("halo, nama saya", m.Nama, "umur", m.Umur, "jurusan", m.Jurusan)
 }
 
-// 5️⃣ Pointer receiver (mengubah nilai struct)
-// Kalau kamu mau method bisa mengubah data struct, buat begini:
-func (p *Person) Birthday() {
-	p.Age++
+func (m *Mahasiswa) UlangTahun() {
+	m.Umur++
 }
 
 func main() {
-	p := Person{"andi", 21}
-	p.Birthday()
-	fmt.Println(p)
+	m := Mahasiswa{"nil", 21, "informatika"}
+	m.Perkenalan()
+	m.UlangTahun()
+	m.Perkenalan()
 }
