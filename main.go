@@ -1,15 +1,4 @@
-// sync.WaitGroup (Cara Benar Menunggu Goroutine)
-
-// time.Sleep cuma cocok buat contoh sederhana.
-// Di dunia nyata, kita pakai WaitGroup.
-
-// WaitGroup = alat untuk:
-
-// Menambah jumlah goroutine yang perlu ditunggu
-
-// Menandai goroutine selesai
-
-// Menunggu semuanya selesai
+// latihan
 package main
 
 import (
@@ -24,21 +13,20 @@ func cetak(n string) {
 func main() {
 	var wg sync.WaitGroup
 
-	// 3️⃣ Tambah jumlah goroutine
 	wg.Add(3)
 
 	go func() {
-		cetak("goroutine 1")
+		cetak("a")
 		wg.Done()
 	}()
 
 	go func() {
-		cetak("goroutine 2")
+		cetak("b")
 		wg.Done()
 	}()
 
 	go func() {
-		cetak("goroutine 3")
+		cetak("c")
 		wg.Done()
 	}()
 
