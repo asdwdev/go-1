@@ -1,29 +1,20 @@
-// latihan bagian 6
+// Struct adalah kumpulan beberapa field (variabel) dalam satu tipe.
 package main
 
 import "fmt"
 
+type Person struct {
+	Name string
+	Age  int
+}
+
 func main() {
-	// === angka ===
-	angka := []int{1, 2, 3, 4, 5}
-
-	angka = append(angka, 6, 7)
-
-	for _, v := range angka {
-		fmt.Println(v)
+	// membuat object-nya:
+	p := Person{
+		Name: "budi",
+		Age:  21,
 	}
-
-	// === buah ===
-	m := map[string]int{
-		"apel":   3,
-		"mangga": 5,
-		"jeruk":  2,
-	}
-
-	m["pisang"] = 10
-
-	for k, v := range m {
-		fmt.Println(k, v)
-	}
-
+	// akses field:
+	fmt.Println(p.Name)
+	fmt.Println(p.Age)
 }
