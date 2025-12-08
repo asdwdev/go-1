@@ -1,29 +1,19 @@
-// latihan
 package main
 
-import (
-	"errors"
-	"fmt"
-	"math"
-)
+import "fmt"
 
-func akar(x float64) (float64, error) {
-	if x < 0 {
-		return 0, errors.New("tidak bisa akar bilangan negatif")
-	}
-
-	return math.Sqrt(x), nil
+type Mahasiswa struct {
+	Nama string
+	Umur int
 }
 
 func main() {
-	var angka float64
-	fmt.Print("Masukkan sebuah angka: ")
-	fmt.Scanln(&angka)
+	// 1. Karena ingin ngisi struktur itu belakangan, bukan saat deklarasi
+	var m Mahasiswa
 
-	v, err := akar(angka)
-	if err != nil {
-		fmt.Println("error:", err)
-		return
-	}
-	fmt.Println("hasil:", v)
+	fmt.Print("nama: ")
+	fmt.Scan(&m.Nama)
+
+	fmt.Print("umur: ")
+	fmt.Scan(&m.Umur)
 }
