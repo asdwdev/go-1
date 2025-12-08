@@ -1,7 +1,4 @@
-// 1️⃣ Apa itu Goroutine?
-
-// Goroutine adalah cara Go menjalankan fungsi secara concurrent (bersamaan), tapi lebih ringan dari thread.
-
+// latihan
 package main
 
 import (
@@ -9,23 +6,14 @@ import (
 	"time"
 )
 
+func cetak(n string) {
+	fmt.Println("halo dari", n)
+}
+
 func main() {
-	// go func() {
-	// 	fmt.Println("halo dari goroutine")
-	// }()
+	go cetak("goroutine 1")
+	go cetak("goroutine 2")
+	go cetak("goroutine 3")
 
-	go fmt.Println("halo")
-
-	// 	Sering tidak muncul apa-apa.
-
-	// Kenapa?
-	// Karena main selesai duluan, goroutine belum sempat jalan.
-
-	// Makanya kita butuh synchronization.
-
-	// 3️⃣ Cara sinkronisasi: time.Sleep (cara paling basic)
 	time.Sleep(1 * time.Second)
-
-	// 	Ini hanya untuk belajar dasar.
-	// Nanti kita pakai WaitGroup yang benar.
 }
