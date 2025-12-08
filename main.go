@@ -8,13 +8,18 @@ type Person struct {
 	Age  int
 }
 
-// 4️⃣ Methods (fungsi yang nempel pada struct)
-// Seperti fungsi, tapi khusus untuk tipe tertentu.
 func (p Person) Greet() {
 	fmt.Println("halo, saya", p.Name)
 }
 
+// 5️⃣ Pointer receiver (mengubah nilai struct)
+// Kalau kamu mau method bisa mengubah data struct, buat begini:
+func (p *Person) Birthday() {
+	p.Age++
+}
+
 func main() {
 	p := Person{"andi", 21}
-	p.Greet()
+	p.Birthday()
+	fmt.Println(p)
 }
