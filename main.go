@@ -1,11 +1,13 @@
-// 3️⃣ Membuat error custom (lebih rapi)
+// ✅ 2. Custom error tapi minimalis (pakai struct, tapi ringkas)
 package main
 
-import "errors"
+type SalahInputError string
 
-var ErrSalahInput = errors.New("input tidak valid")
+func (e SalahInputError) Error() string {
+	return string(e)
+}
 
 func main() {
-	// contoh pemaiakan
-	println(ErrSalahInput.Error())
+	err := SalahInputError("input salah banget")
+	println(err.Error())
 }
